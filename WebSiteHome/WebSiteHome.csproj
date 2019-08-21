@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GuitarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -184,10 +185,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\guitar.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\200x200.svg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -235,6 +238,23 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Guitar\Index.cshtml" />
+    <Content Include="Views\Guitar\_Buttons.cshtml" />
+    <Content Include="Views\Guitar\_Tables.cshtml" />
+    <Content Include="Views\Guitar\_Thumbnails.cshtml" />
+    <Content Include="Views\Guitar\_Labels.cshtml" />
+    <Content Include="Views\Guitar\_Badges.cshtml" />
+    <Content Include="Views\Guitar\_DropdownMenu.cshtml" />
+    <Content Include="Views\Guitar\_Navs.cshtml" />
+    <Content Include="Views\Guitar\_Navbars.cshtml" />
+    <Content Include="Views\Guitar\_Alerts.cshtml" />
+    <Content Include="Views\Guitar\_ProgressBars.cshtml" />
+    <Content Include="Views\Guitar\_ListGroups.cshtml" />
+    <Content Include="Views\Guitar\_Panels.cshtml" />
+    <Content Include="Views\Guitar\_Wells.cshtml" />
+    <Content Include="Views\Guitar\_Carousel.cshtml" />
+    <Content Include="Views\Shared\_GuitarLayout.cshtml" />
+    <Content Include="Views\Guitar\Strat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
