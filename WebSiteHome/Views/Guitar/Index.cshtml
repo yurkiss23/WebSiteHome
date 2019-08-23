@@ -11,12 +11,20 @@
 </div>
 
 <h1>Список гітар</h1>
-<ul>
+
+<ul class="list-group">
     @foreach (var g in Model)
     {
-        <li>
-            @g.Name
-            <img src="@g.Image" alt="@g.Name" />
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-md-3">
+                    @g.Name
+                </div>
+                <div class="col-md-4">
+                    <img class="img-thumbnail" src="@g.Image" alt="@g.Name"/>
+
+                </div>
+            </div>
         </li>
     }
 </ul>

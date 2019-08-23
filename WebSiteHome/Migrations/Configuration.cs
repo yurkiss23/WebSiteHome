@@ -28,6 +28,20 @@ namespace WebSiteHome.Migrations
                     Name = "LesPaul",
                     Image = "https://media.sweetwater.com/api/i/q-82__ha-77b6f0aa5ca2e84b__hmac-b76d52f1240a4a0728229e98665c5defb30792a4/images/items/750/ENTPBCNH-large.jpg"
                 });
+            context.Guitars.AddOrUpdate(g => g.Id,
+                new Entities.TGuitar
+                {
+                    Id = 3,
+                    Name = "SG",
+                    Image = "https://cdn11.bigcommerce.com/s-8wy6p2/images/stencil/2000x2000/products/6827/46472/IMG_0152__55875.1548883907.jpg?c=2"
+                });
+            context.Guitars.AddOrUpdate(g => g.Id,
+                new Entities.TGuitar
+                {
+                    Id = 4,
+                    Name = "Telecaster",
+                    Image = "https://images.reverb.com/image/upload/s--0sC-r5D2--/f_auto,t_supersize/v1544743060/bz3nu4jvrs16phy3oatm.jpg"
+                });
         }
     }
 }
