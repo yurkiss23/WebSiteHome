@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using WebSiteHome.Entities;
 
 namespace WebSiteHome.Models
 {
@@ -21,9 +22,10 @@ namespace WebSiteHome.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection")
         {
         }
+        public DbSet<TGuitar> Guitars { get; set; }
 
         public static ApplicationDbContext Create()
         {
