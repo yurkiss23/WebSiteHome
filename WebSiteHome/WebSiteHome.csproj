@@ -185,6 +185,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\GuitarViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -265,6 +266,7 @@
     <Content Include="Views\Guitar\_Carousel.cshtml" />
     <Content Include="Views\Shared\_GuitarLayout.cshtml" />
     <Content Include="Views\Guitar\Strat.cshtml" />
+    <Content Include="Views\Guitar\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

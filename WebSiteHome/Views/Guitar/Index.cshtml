@@ -1,18 +1,48 @@
-﻿@model List<WebSiteHome.Entities.TGuitar>
+﻿@model IEnumerable<WebSiteHome.Models.GuitarItemViewModels>
 @{
     ViewBag.Title = "Гітари";
     Layout = "~/Views/Shared/_GuitarLayout.cshtml";
 }
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
+@*<div class="jumbotron">
     <h1>Theme example</h1>
     <p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>
-</div>
+</div>*@
 
 <h1>Список гітар</h1>
 
-<ul class="list-group">
+<a class="btn btn-success" href="@Url.Action("Add", "Guitar")">додати</a>
+
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>@Html.DisplayNameFor(model => model.Image)</th>
+            <th>@Html.DisplayNameFor(model=>model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Date)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int i = 1;}
+        @foreach(var g in Model)
+        {
+        <tr>
+            <td>@i</td>
+            <td><img class="small-img" src="@g.Image" alt="Alternate Text" style="width:50px"/></td>
+            <td>@g.Name</td>
+            <td>1.1.2001</td>
+            <td>
+                <a class="btn btn-warning" href="#">редагувати</a>
+                <a class="btn btn-danger" href="#">видалити</a>
+            </td>
+        </tr>
+        i++;
+        }
+    </tbody>
+</table>
+@*<ul class="list-group">
     @foreach (var g in Model)
     {
         <li class="list-group-item">
@@ -26,7 +56,7 @@
             </div>
         </li>
     }
-</ul>
+</ul>*@
 
 @*@Html.Partial("_Buttons")
 
