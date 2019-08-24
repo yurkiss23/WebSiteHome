@@ -22,7 +22,7 @@ namespace WebSiteHome.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection")
+            : base("Connection")
         {
         }
         public DbSet<TGuitar> Guitars { get; set; }
