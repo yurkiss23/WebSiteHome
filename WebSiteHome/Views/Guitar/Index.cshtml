@@ -10,53 +10,81 @@
     <p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>
 </div>*@
 
-<h1>Список гітар</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
 
-<a class="btn btn-success" href="@Url.Action("Add", "Guitar")">додати</a>
+            <h1>Список гітар</h1>
 
-<table class="table table-responsive">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>@Html.DisplayNameFor(model => model.Image)</th>
-            <th>@Html.DisplayNameFor(model=>model.Name)</th>
-            <th>@Html.DisplayNameFor(model => model.Date)</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @{ int i = 1;}
-        @foreach(var g in Model)
-        {
-        <tr>
-            <td>@i</td>
-            <td><img class="small-img" src="@g.Image" alt="Alternate Text" style="width:50px"/></td>
-            <td>@g.Name</td>
-            <td>1.1.2001</td>
-            <td>
-                <a class="btn btn-warning" href="#">редагувати</a>
-                <a class="btn btn-danger" href="#">видалити</a>
-            </td>
-        </tr>
-        i++;
-        }
-    </tbody>
-</table>
-@*<ul class="list-group">
-    @foreach (var g in Model)
-    {
-        <li class="list-group-item">
-            <div class="row">
-                <div class="col-md-3">
-                    @g.Name
-                </div>
-                <div class="col-md-4">
-                    <img class="img-thumbnail" src="@g.Image" alt="@g.Name" style="max-width: 200px"/>
-                </div>
+            <a class="btn btn-success" href="@Url.Action("Add", "Guitar")">додати</a>
+
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>@Html.DisplayNameFor(model => model.Image)</th>
+                        <th>@Html.DisplayNameFor(model=>model.Name)</th>
+                        <th>@Html.DisplayNameFor(model => model.Date)</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ int i = 1;}
+                    @foreach(var g in Model)
+                    {
+                    <tr>
+                        <td>@i</td>
+                        <td><img class="small-img" src="@g.Image" alt="Alternate Text" style="width:50px"/></td>
+                        <td>@g.Name</td>
+                        <td>1.1.2001</td>
+                        <td>
+                            <a class="btn btn-warning" href="#">редагувати</a>
+                            <a class="btn btn-danger" href="#">видалити</a>
+                        </td>
+                    </tr>
+                    i++;
+                    }
+                </tbody>
+            </table>
+            @*<ul class="list-group">
+                @foreach (var g in Model)
+                {
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-3">
+                                @g.Name
+                            </div>
+                            <div class="col-md-4">
+                                <img class="img-thumbnail" src="@g.Image" alt="@g.Name" style="max-width: 200px"/>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>*@
+        </div>
+        <div class="col-md-3">
+            <h1>Новини</h1>
+            <div class="list-group">
+                <a href="https://muz-yarmarok.org.ua/" class="list-group-item active">
+                    <img src="https://muz-yarmarok.org.ua/images/banners/Logo-Yarmarok.png" alt="український музичний ярмарок" />
+                    <h4 class="list-group-item-heading">Український музичний ярмарок</h4>
+                    <p class="list-group-item-text">
+                        УКРАЇНСЬКИЙ МУЗИЧНИЙ ЯРМАРОК –
+                        головна подія року на музичному ринку України
+                    </p>
+                </a>
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">List group item heading</h4>
+                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                </a>
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">List group item heading</h4>
+                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                </a>
             </div>
-        </li>
-    }
-</ul>*@
+        </div>
+    </div>
+</div>
 
 @*@Html.Partial("_Buttons")
 

@@ -52,6 +52,21 @@ namespace WebSiteHome.Controllers
             return RedirectToAction("index");
         }
 
+        public ActionResult Users()
+        {
+            var model = _context.Users.
+                Select(u => new UserItemViewModels
+                {
+                    Id = u.Id,
+                    FirstName = u.FirstName,
+                    LastName = u.LastName,
+                    DateBirth = u.DateBirth.ToString(),
+                    Email = u.Email,
+                    Phone = u.Phone
+                });
+            return View();
+        }
+
         public ActionResult Strat()
         {
             return View();
