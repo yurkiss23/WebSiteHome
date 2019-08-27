@@ -13,53 +13,35 @@
 <table class="table table-responsive-sm">
     <thead>
         <tr>
-            <th>@Html.DisplayNameFor(model)</th>
-            <th>Date registered</th>
-            <th>Role</th>
-            <th>Status</th>
+            <th>#</th>
+            <th>@Html.DisplayNameFor(model => model.FirstName), @Html.DisplayNameFor(model => model.LastName)</th>
+            <th>@Html.DisplayNameFor(model => model.DateBirth)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Phone)</th>
+            <th>@Html.DisplayNameFor(model => model.Status)</th>
+            <th>примітка</th>
         </tr>
     </thead>
     <tbody>
+        @{ int i = 1;}
+        @foreach(var u in Model)
+        {
         <tr>
-            <td>Samppa Nori</td>
-            <td>2012/01/01</td>
-            <td>Member</td>
+            <td>@i</td>
+            <td>@u.FirstName  @u.LastName</td>
+            <td>@u.DateBirth</td>
+            <td>@u.Email</td>
+            <td>@u.Phone</td>
             <td>
-                <span class="label label-success">Active</span>
+                @if (u.Status == 0)
+                {
+                    <span class="label label-danger">Active</span>
+                }
+                else
+                {<span class="label label-success">Banned</span>}
             </td>
         </tr>
-        <tr>
-            <td>Estavan Lykos</td>
-            <td>2012/02/01</td>
-            <td>Staff</td>
-            <td>
-                <span class="label label-danger">Banned</span>
-            </td>
-        </tr>
-        <tr>
-            <td>Chetan Mohamed</td>
-            <td>2012/02/01</td>
-            <td>Admin</td>
-            <td>
-                <span class="label label-default">Inactive</span>
-            </td>
-        </tr>
-        <tr>
-            <td>Derick Maximinus</td>
-            <td>2012/03/01</td>
-            <td>Member</td>
-            <td>
-                <span class="label label-warning">Pending</span>
-            </td>
-        </tr>
-        <tr>
-            <td>Friderik David</td>
-            <td>2012/01/21</td>
-            <td>Staff</td>
-            <td>
-                <span class="label label-success">Active</span>
-            </td>
-        </tr>
+        }
     </tbody>
 </table>
 

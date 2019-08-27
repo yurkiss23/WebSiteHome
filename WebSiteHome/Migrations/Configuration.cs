@@ -70,25 +70,25 @@ namespace WebSiteHome.Migrations
             context.SiteUsers.AddOrUpdate(u => u.Id,
                 new Entities.User
                 {
-                    Id = 1,
+                    Id = 3,
                     FirstName = "Chetan",
                     LastName = "Mohamed",
                     DateBirth = Convert.ToDateTime("2012/02/01"),
                     Email = "q@q.q",
                     Phone = "123456789",
-                    Password = "1",
+                    Password = "3",
                     Status = 1
                 });
             context.SiteUsers.AddOrUpdate(u => u.Id,
                 new Entities.User
                 {
-                    Id = 2,
+                    Id = 4,
                     FirstName = "Derick",
                     LastName = "Maximinus",
                     DateBirth = Convert.ToDateTime("2012/03/01"),
                     Email = "q@q.q",
                     Phone = "123456789",
-                    Password = "2",
+                    Password = "4",
                     Status = 0
                 });
         }

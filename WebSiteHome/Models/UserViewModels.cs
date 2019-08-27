@@ -18,5 +18,7 @@ namespace WebSiteHome.Models
         public string Email { get; set; }
         [Display(Name = "телефон")]
         public string Phone { get; set; }
+        [Required]
+        public int Status { get; set; }
     }
 }

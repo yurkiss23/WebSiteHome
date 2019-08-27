@@ -62,9 +62,10 @@ namespace WebSiteHome.Controllers
                     LastName = u.LastName,
                     DateBirth = u.DateBirth.ToString(),
                     Email = u.Email,
-                    Phone = u.Phone
+                    Phone = u.Phone,
+                    Status = u.Status
                 }).ToList();
-            return View();
+            return View(model);
         }
 
         public ActionResult Strat()
