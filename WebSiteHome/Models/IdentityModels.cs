@@ -26,7 +26,7 @@ namespace WebSiteHome.Models
         {
         }
         public DbSet<TGuitar> Guitars { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<User> SiteUsers { get; set; }
 
         public static ApplicationDbContext Create()
         {

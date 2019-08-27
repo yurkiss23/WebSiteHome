@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<WebSiteHome.Models.UserItemViewModels>
 @{
     ViewBag.Title = "Користувачі";
     Layout = "~/Views/Shared/_GuitarLayout.cshtml";
@@ -13,7 +13,7 @@
 <table class="table table-responsive-sm">
     <thead>
         <tr>
-            <th>Username</th>
+            <th>@Html.DisplayNameFor(model)</th>
             <th>Date registered</th>
             <th>Role</th>
             <th>Status</th>

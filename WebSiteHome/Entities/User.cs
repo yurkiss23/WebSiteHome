@@ -22,6 +22,8 @@ namespace WebSiteHome.Entities
         public string Email { get; set; }
         [StringLength(255)]
         public string Phone { get; set; }
+        [Required]
+        public int Status { get; set; }
         [Required, StringLength(255)]
         public string Password { get; set; }
     }

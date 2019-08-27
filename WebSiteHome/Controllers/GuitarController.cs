@@ -54,7 +54,7 @@ namespace WebSiteHome.Controllers
 
         public ActionResult Users()
         {
-            var model = _context.Users.
+            var model = _context.SiteUsers.
                 Select(u => new UserItemViewModels
                 {
                     Id = u.Id,
@@ -63,7 +63,7 @@ namespace WebSiteHome.Controllers
                     DateBirth = u.DateBirth.ToString(),
                     Email = u.Email,
                     Phone = u.Phone
-                });
+                }).ToList();
             return View();
         }
 
