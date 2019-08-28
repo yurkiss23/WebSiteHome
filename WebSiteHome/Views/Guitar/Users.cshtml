@@ -8,18 +8,18 @@
 @*<link rel="stylesheet" href="~/Content/coreui.min.css">*@
 
 
-<h2>Users</h2>
+<h2>Користувачі</h2>
 
 <table class="table table-responsive-sm">
     <thead>
         <tr>
             <th>#</th>
             <th>@Html.DisplayNameFor(model => model.FirstName), @Html.DisplayNameFor(model => model.LastName)</th>
-            <th>@Html.DisplayNameFor(model => model.DateBirth)</th>
+            <th>@Html.DisplayNameFor(model => model.DateAdd)</th>
             <th>@Html.DisplayNameFor(model => model.Email)</th>
             <th>@Html.DisplayNameFor(model => model.Phone)</th>
             <th>@Html.DisplayNameFor(model => model.Status)</th>
-            <th>примітка</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -29,19 +29,42 @@
         <tr>
             <td>@i</td>
             <td>@u.FirstName  @u.LastName</td>
-            <td>@u.DateBirth</td>
+            <td>@u.DateAdd</td>
             <td>@u.Email</td>
             <td>@u.Phone</td>
-            <td>
-                @if (u.Status == 0)
-                {
-                    <span class="label label-danger">Active</span>
-                }
-                else
-                {<span class="label label-success">Banned</span>}
-            </td>
+            @if (u.Status == 0)
+            {
+                <td><span class="label label-danger">Banned</span></td>
+                <td><button id="deBlcBtn" class="btn btn-info btn-xs deBlcBtn" href="#">розблокувати</button></td>
+            }
+            else
+            {
+                <td><span class="label label-success">Active</span></td>
+                <td><button id="blockBtn" class="btn btn-warning btn-xs blockBtn" href="#">заблокувати</button></td>
+            }
         </tr>
         }
     </tbody>
 </table>
+
+@section Scripts{
+    <script>
+        $(function () {
+            let listBlockBtn = document.getElementsByClassName("blockBtn");
+            let listDeBlcBtn = document.getElementsByClassName("deBlcBtn");
+            for (let i = 0; i < listBlockBtn.length; i++) {
+                $(listBlockBtn[i]).on("click", function () {
+                    alert("заброкувати користувача");
+                });
+            }
+            for (let i = 0; i < listDeBlcBtn.length; i++) {
+                $(listDeBlcBtn[i]).on("click", function () {
+                    alert("розблокувати користувача");
+                });
+            }
+        })
+
+    </script>
+    
+    }
 

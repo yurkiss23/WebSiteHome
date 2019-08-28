@@ -18,6 +18,8 @@ namespace WebSiteHome.Entities
         public string LastName { get; set; }
         [Required]
         public DateTime DateBirth { get; set; }
+        [Required]
+        public DateTime DateAdd { get; set; }
         [Required, StringLength(255)]
         public string Email { get; set; }
         [StringLength(255)]

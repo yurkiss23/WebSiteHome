@@ -60,7 +60,7 @@ namespace WebSiteHome.Controllers
                     Id = u.Id,
                     FirstName = u.FirstName,
                     LastName = u.LastName,
-                    DateBirth = u.DateBirth.ToString(),
+                    DateAdd = u.DateAdd.ToString(),
                     Email = u.Email,
                     Phone = u.Phone,
                     Status = u.Status

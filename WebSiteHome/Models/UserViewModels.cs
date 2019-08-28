@@ -15,10 +15,13 @@ namespace WebSiteHome.Models
         public string LastName { get; set; }
         [Display(Name = "дата народження")]
         public string DateBirth { get; set; }
+        [Display(Name = "дата додавання")]
+        public string DateAdd { get; set; }
         public string Email { get; set; }
         [Display(Name = "телефон")]
         public string Phone { get; set; }
         [Required]
+        [Display(Name = "доступ")]
         public int Status { get; set; }
     }
 }
