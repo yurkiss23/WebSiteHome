@@ -24,4 +24,8 @@ namespace WebSiteHome.Models
         [Display(Name = "доступ")]
         public int Status { get; set; }
     }
+    public class UserBlockViewModels
+    {
+        public int Status { get; set; }
+    }
 }

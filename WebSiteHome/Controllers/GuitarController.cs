@@ -67,6 +67,18 @@ namespace WebSiteHome.Controllers
                 }).ToList();
             return View(model);
         }
+        [HttpGet]
+        public ActionResult Block()
+        {
+            UserBlockViewModels model = new UserBlockViewModels();
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Block(UserBlockViewModels model)
+        {
+            
+            return RedirectToAction("users");
+        }
 
         public ActionResult Strat()
         {

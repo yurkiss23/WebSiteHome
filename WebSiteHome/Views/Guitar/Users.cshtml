@@ -40,9 +40,15 @@
             else
             {
                 <td><span class="label label-success">Active</span></td>
-                <td><button id="blockBtn" class="btn btn-warning btn-xs blockBtn" href="#">заблокувати</button></td>
+                <td>
+                    <button id="blockBtn" class="btn btn-warning btn-xs blockBtn"
+                            href="@Url.Action("Block", "Guitar")">
+                        заблокувати
+                    </button>
+                </td>
             }
         </tr>
+        i++;
         }
     </tbody>
 </table>
@@ -50,10 +56,22 @@
 @section Scripts{
     <script>
         $(function () {
+            let name;
             let listBlockBtn = document.getElementsByClassName("blockBtn");
             let listDeBlcBtn = document.getElementsByClassName("deBlcBtn");
             for (let i = 0; i < listBlockBtn.length; i++) {
                 $(listBlockBtn[i]).on("click", function () {
+                    let parent = this.parentNode;
+                    while (parent.nodeName !== "TR") {
+                        parent = parent.parentNode;
+                    }
+                    name = parent.children[1].innerHTML;
+                    alert(name);
+
+                    @*$.post(@Url.Action("Block", "Guitar"), {Firstname = name}, function (responce) {
+                        alert(responce);
+                    });*@
+
                     alert("заброкувати користувача");
                 });
             }
@@ -63,6 +81,7 @@
                 });
             }
         })
+
 
     </script>
     
