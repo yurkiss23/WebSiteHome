@@ -24,21 +24,24 @@ namespace WebSiteHome.Models
         [Display(Name = "доступ")]
         public int Status { get; set; }
     }
-    public class UserAddViewModels
+    public class UserAddViewModel
     {
         [Display(Name = "ім'я")]
+        [Required(ErrorMessage = "ім'я є обов'язковим")]
         public string FirstName { get; set; }
         [Display(Name = "прізвище")]
         public string LastName { get; set; }
         [Display(Name = "дата народження")]
         public string DateBirth { get; set; }
+        [Required(ErrorMessage = "email є обов'язковим")]
         public string Email { get; set; }
         [Display(Name = "телефон")]
         public string Phone { get; set; }
+        [Required(ErrorMessage = "пароль є обов'язковим")]
         [Display(Name = "пароль")]
         public string Password { get; set; }
     }
-    public class UserBlockViewModels
+    public class UserBlockViewModel
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

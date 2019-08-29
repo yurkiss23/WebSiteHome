@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using WebSiteHome.Entities;
@@ -70,17 +73,42 @@ namespace WebSiteHome.Controllers
         [HttpGet]
         public ActionResult AddUser()
         {
-            UserAddViewModels model = new UserAddViewModels();
-            return View(model);
-        }
-        [HttpGet]
-        public ActionResult Block()
-        {
-            UserBlockViewModels model = new UserBlockViewModels();
+            UserAddViewModel model = new UserAddViewModel();
             return View(model);
         }
         [HttpPost]
-        public ActionResult Block(UserBlockViewModels model)
+        public ActionResult AddUser(UserAddViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            using (WebClient client=new WebClient())
+            {
+                client.Encoding = Encoding.UTF8;
+                client.Headers.Add("Content-Type", "application/json");
+                string method = "POST";
+                string data = JsonConvert.SerializeObject(new
+                {
+                    UserEmail = model.Email,
+                    Title = model.FirstName + " " + model.LastName,
+                    Body = "user added"
+                });
+                var result = client.UploadString("http://localhost:56927/", method, data);
+            }
+
+            return RedirectToAction("users");
+        }
+        //public ihttpactionresult
+        [HttpGet]
+        public ActionResult Block()
+        {
+            UserBlockViewModel model = new UserBlockViewModel();
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Block(UserBlockViewModel model)
         {
             Console.WriteLine(model.FirstName);
             return RedirectToAction("users");
