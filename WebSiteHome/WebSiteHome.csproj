@@ -283,6 +283,7 @@
     <Content Include="Views\Guitar\Strat.cshtml" />
     <Content Include="Views\Guitar\Add.cshtml" />
     <Content Include="Views\Guitar\Users.cshtml" />
+    <Content Include="Views\Guitar\AddUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

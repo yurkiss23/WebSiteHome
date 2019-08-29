@@ -10,6 +10,8 @@
 
 <h2>Користувачі</h2>
 
+<a class="btn btn-success" href="@Url.Action("AddUser", "Guitar")">додати</a>
+
 <table class="table table-responsive-sm">
     <thead>
         <tr>
@@ -61,16 +63,14 @@
             let listDeBlcBtn = document.getElementsByClassName("deBlcBtn");
             for (let i = 0; i < listBlockBtn.length; i++) {
                 $(listBlockBtn[i]).on("click", function () {
-                    let parent = this.parentNode;
-                    while (parent.nodeName !== "TR") {
-                        parent = parent.parentNode;
-                    }
-                    name = parent.children[1].innerHTML;
-                    alert(name);
-
-                    @*$.post(@Url.Action("Block", "Guitar"), {Firstname = name}, function (responce) {
-                        alert(responce);
-                    });*@
+                    //let parent = this.parentNode;
+                    //while (parent.nodeName !== "TR") {
+                    //    parent = parent.parentNode;
+                    //}
+                    //name = parent.children[1].innerHTML;
+                    //alert(name.split(' ')[2]);
+                    //UserBlockViewModels mdl = { FirstName: name.split(' ')[0], LastName: name.split(' ')[2] };
+                    //$.post("/Guitar/Block", { model: mdl });
 
                     alert("заброкувати користувача");
                 });

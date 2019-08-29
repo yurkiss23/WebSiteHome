@@ -68,6 +68,12 @@ namespace WebSiteHome.Controllers
             return View(model);
         }
         [HttpGet]
+        public ActionResult AddUser()
+        {
+            UserAddViewModels model = new UserAddViewModels();
+            return View(model);
+        }
+        [HttpGet]
         public ActionResult Block()
         {
             UserBlockViewModels model = new UserBlockViewModels();
@@ -76,7 +82,7 @@ namespace WebSiteHome.Controllers
         [HttpPost]
         public ActionResult Block(UserBlockViewModels model)
         {
-            
+            Console.WriteLine(model.FirstName);
             return RedirectToAction("users");
         }
 
