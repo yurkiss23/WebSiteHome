@@ -41,6 +41,12 @@ namespace WebSiteHome.Models
         [Display(Name = "пароль")]
         public string Password { get; set; }
     }
+    public class UserMsgViewModel
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+    }
     public class UserBlockViewModel
     {
         public string FirstName { get; set; }

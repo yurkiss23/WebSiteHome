@@ -91,16 +91,16 @@ namespace WebSiteHome.Controllers
                 string method = "POST";
                 string data = JsonConvert.SerializeObject(new
                 {
-                    UserEmail = model.Email,
-                    Title = model.FirstName + " " + model.LastName,
-                    Body = "user added"
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Email = model.Email
+                    //Body = "user added"
                 });
-                var result = client.UploadString("http://localhost:56927/", method, data);
+                var result = client.UploadString("https://localhost:56927/", method, data);
             }
 
             return RedirectToAction("users");
         }
-        //public ihttpactionresult
         [HttpGet]
         public ActionResult Block()
         {
