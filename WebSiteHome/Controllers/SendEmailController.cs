@@ -9,21 +9,8 @@ using WebSiteHome.Models;
 
 namespace WebSiteHome.Controllers
 {
-    public class MessageController : ApiController
+    public class SendEmailController : ApiController
     {
-        // GET: api/Messege
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET: api/Messege/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/Message
         public IHttpActionResult Post(UserAddViewModel model)
         {
             MailMessage mail = new MailMessage("terranet23@gmail.com", model.Email);
@@ -41,17 +28,5 @@ namespace WebSiteHome.Controllers
 
             return Ok();
         }
-
-        // PUT: api/Messege/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Messege/5
-        public void Delete(int id)
-        {
-        }
-
-        
     }
 }

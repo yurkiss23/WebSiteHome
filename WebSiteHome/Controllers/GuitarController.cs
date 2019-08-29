@@ -86,9 +86,10 @@ namespace WebSiteHome.Controllers
 
             using (WebClient client=new WebClient())
             {
+                string url = "https://localhost:44344/api/Message";
                 client.Encoding = Encoding.UTF8;
                 client.Headers.Add("Content-Type", "application/json");
-                string method = "POST";
+                //string method = "POST";
                 string data = JsonConvert.SerializeObject(new
                 {
                     FirstName = model.FirstName,
@@ -96,7 +97,8 @@ namespace WebSiteHome.Controllers
                     Email = model.Email
                     //Body = "user added"
                 });
-                var result = client.UploadString("https://localhost:56927/", method, data);
+                var result = client.UploadString(url, "POST", data);
+                
             }
 
             return RedirectToAction("users");
