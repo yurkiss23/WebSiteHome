@@ -83,23 +83,35 @@ namespace WebSiteHome.Controllers
             {
                 return View(model);
             }
-
-            using (WebClient client=new WebClient())
+            User user = new User
             {
-                string url = "https://localhost:44344/api/Message";
-                client.Encoding = Encoding.UTF8;
-                client.Headers.Add("Content-Type", "application/json");
-                //string method = "POST";
-                string data = JsonConvert.SerializeObject(new
-                {
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    Email = model.Email
-                    //Body = "user added"
-                });
-                var result = client.UploadString(url, "POST", data);
-                
-            }
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                DateBirth = Convert.ToDateTime(model.DateBirth),
+                DateAdd = DateTime.Now,
+                Email = model.Email,
+                Phone = model.Phone,
+                Status = 0,
+                Password = model.Password
+            };
+            _context.SiteUsers.Add(user);
+            _context.SaveChanges();
+
+            //using (WebClient client=new WebClient())
+            //{
+            //    string url = "http://localhost:56927/api/Message";
+            //    client.Encoding = Encoding.UTF8;
+            //    client.Headers.Add("Content-Type", "application/json");
+            //    //string method = "POST";
+            //    string data = JsonConvert.SerializeObject(new
+            //    {
+            //        FirstName = model.FirstName,
+            //        LastName = model.LastName,
+            //        Email = model.Email
+            //        //Body = "user added"
+            //    });
+            //    var result = client.UploadString(url, "POST", data);
+            //}
 
             return RedirectToAction("users");
         }
