@@ -11,6 +11,7 @@
 <h2>Користувачі</h2>
 
 <a class="btn btn-success" href="@Url.Action("AddUser", "Guitar")">додати</a>
+<button id="addDialog" class="btn btn-success">додати з діалоговим вікном</button>
 
 <table class="table table-responsive-sm">
     <thead>
@@ -85,5 +86,10 @@
 
     </script>
     
+    <script>
+        $("#addDialog").on("click", function () {
+            alert("dialog");
+        })
+    </script>
     }
 
