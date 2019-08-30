@@ -296,6 +296,8 @@
     <Content Include="Views\Guitar\Add.cshtml" />
     <Content Include="Views\Guitar\Users.cshtml" />
     <Content Include="Views\Guitar\AddUser.cshtml" />
+    <Content Include="Views\Guitar\_AddDialog.cshtml" />
+    <Content Include="Views\Guitar\_AddForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
