@@ -88,6 +88,15 @@ namespace WebSiteHome
         }
     }
 
+    public class ApplicationRoleManager : RoleManager<ApplicationRole>
+    {
+        public ApplicationRoleManager(RoleStore<ApplicationRole> store) : base(store) { }
+        public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager>options,IOwinContext context)
+        {
+            return new ApplicationRoleManager(new RoleStore<ApplicationRole>(context.Get<ApplicationDbContext>()));
+        }
+    }
+
     // Настройка диспетчера входа для приложения.
     public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
     {

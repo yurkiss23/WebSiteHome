@@ -33,12 +33,15 @@ namespace WebSiteHome.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public ActionResult Add()
         {
+            var name = User.Identity.Name;
             GuitarAddViewModel model = new GuitarAddViewModel();
             return View(model);
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult Add(GuitarAddViewModel model)
         {
             if (!ModelState.IsValid)
@@ -71,12 +74,14 @@ namespace WebSiteHome.Controllers
             return View(model);
         }
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public ActionResult AddUser()
         {
             UserAddViewModel model = new UserAddViewModel();
             return View(model);
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult AddUser(UserAddViewModel model)
         {
             if (!ModelState.IsValid)
