@@ -18,8 +18,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>
-    </IISExpressSSLPort>
+    <IISExpressSSLPort>44344</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -208,6 +207,10 @@
     <Compile Include="Migrations\201908281127345_edit2 table siteUsers.Designer.cs">
       <DependentUpon>201908281127345_edit2 table siteUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909032000047_roles table.cs" />
+    <Compile Include="Migrations\201909032000047_roles table.Designer.cs">
+      <DependentUpon>201909032000047_roles table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GuitarViewModels.cs" />
@@ -330,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908281127345_edit2 table siteUsers.resx">
       <DependentUpon>201908281127345_edit2 table siteUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909032000047_roles table.resx">
+      <DependentUpon>201909032000047_roles table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
