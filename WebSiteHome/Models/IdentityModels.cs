@@ -17,6 +17,7 @@ namespace WebSiteHome.Models
             // Здесь добавьте утверждения пользователя
             return userIdentity;
         }
+        public virtual TCombo Combo { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -26,6 +27,7 @@ namespace WebSiteHome.Models
         {
         }
         public DbSet<TGuitar> Guitars { get; set; }
+        public DbSet<TCombo> Combos { get; set; }
 
         public static ApplicationDbContext Create()
         {

@@ -171,6 +171,7 @@
     <Compile Include="Controllers\GuitarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Entities\TCombo.cs" />
     <Compile Include="Entities\TGuitar.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,6 +183,10 @@
     <Compile Include="Migrations\201908230027131_add tblGuitars.cs" />
     <Compile Include="Migrations\201908230027131_add tblGuitars.Designer.cs">
       <DependentUpon>201908230027131_add tblGuitars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909070649558_add combo.cs" />
+    <Compile Include="Migrations\201909070649558_add combo.Designer.cs">
+      <DependentUpon>201909070649558_add combo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -290,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908230027131_add tblGuitars.resx">
       <DependentUpon>201908230027131_add tblGuitars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909070649558_add combo.resx">
+      <DependentUpon>201909070649558_add combo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
