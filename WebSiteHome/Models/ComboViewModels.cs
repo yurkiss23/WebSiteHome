@@ -6,9 +6,11 @@ using System.Web;
 
 namespace WebSiteHome.Models
 {
-    public class GuitarItemViewModels
+    public class ComboItemViewModels
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
+        [Display(Name = "пошта")]
+        public string Email { get; set; }
         [Display(Name="ім'я")]
         public string Name { get; set; }
         [Display(Name = "дата")]
@@ -17,8 +19,11 @@ namespace WebSiteHome.Models
         public string Image { get; set; }
     }
 
-    public class ComborAddViewModel
+    public class ComboAddViewModel
     {
+        [EmailAddress(ErrorMessage = "не валідна пошта")]
+        [Display(Name = "пошта")]
+        public string Email { get; set; }
         [Display(Name = "ім'я")]
         [Required(ErrorMessage = "ім'я є обов'язковим")]
         public string Name { get; set; }

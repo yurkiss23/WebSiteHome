@@ -18,7 +18,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44344</IISExpressSSLPort>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -178,6 +179,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ComboController.cs" />
     <Compile Include="Controllers\GuitarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -212,12 +214,13 @@
     <Compile Include="Migrations\201909032000047_roles table.Designer.cs">
       <DependentUpon>201909032000047_roles table.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201909070649558_add combo.cs" />
-    <Compile Include="Migrations\201909070649558_add combo.Designer.cs">
-      <DependentUpon>201909070649558_add combo.cs</DependentUpon>
+    <Compile Include="Migrations\201909070705089_add combos.cs" />
+    <Compile Include="Migrations\201909070705089_add combos.Designer.cs">
+      <DependentUpon>201909070705089_add combos.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ComboViewModels.cs" />
     <Compile Include="Models\GuitarViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -306,6 +309,8 @@
     <Content Include="Views\Guitar\AddUser.cshtml" />
     <Content Include="Views\Guitar\_AddDialog.cshtml" />
     <Content Include="Views\Guitar\_AddForm.cshtml" />
+    <Content Include="Views\Combo\Index.cshtml" />
+    <Content Include="Views\Combo\AddCombo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -342,8 +347,8 @@
     <EmbeddedResource Include="Migrations\201909032000047_roles table.resx">
       <DependentUpon>201909032000047_roles table.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909070649558_add combo.resx">
-      <DependentUpon>201909070649558_add combo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909070705089_add combos.resx">
+      <DependentUpon>201909070705089_add combos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

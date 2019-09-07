@@ -7,13 +7,13 @@ namespace WebSiteHome.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class addcombo : IMigrationMetadata
+    public sealed partial class addcombos : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addcombo));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addcombos));
         
         string IMigrationMetadata.Id
         {
-            get { return "201909070649558_add combo"; }
+            get { return "201909070705089_add combos"; }
         }
         
         string IMigrationMetadata.Source

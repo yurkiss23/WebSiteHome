@@ -16,7 +16,7 @@ namespace WebSiteHome.Controllers
         private readonly ApplicationDbContext _context;
         public GuitarController()
         {
-            _context = new ApplicationDbContext(); 
+            _context = new ApplicationDbContext();
         }
         // GET: Guitar
         public ActionResult Index()
@@ -37,12 +37,12 @@ namespace WebSiteHome.Controllers
         public ActionResult Add()
         {
             var name = User.Identity.Name;
-            GuitarAddViewModel model = new GuitarAddViewModel();
+            ComborAddViewModel model = new ComborAddViewModel();
             return View(model);
         }
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public ActionResult Add(GuitarAddViewModel model)
+        public ActionResult Add(ComborAddViewModel model)
         {
             if (!ModelState.IsValid)
             {

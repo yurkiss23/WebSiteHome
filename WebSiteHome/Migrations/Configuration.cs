@@ -1,9 +1,12 @@
 namespace WebSiteHome.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using WebSiteHome.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<WebSiteHome.Models.ApplicationDbContext>
     {
@@ -14,6 +17,7 @@ namespace WebSiteHome.Migrations
 
         protected override void Seed(WebSiteHome.Models.ApplicationDbContext context)
         {
+            #region guitar
             context.Guitars.AddOrUpdate(g => g.Id,
                 new Entities.TGuitar
                 {
@@ -42,7 +46,9 @@ namespace WebSiteHome.Migrations
                     Name = "Telecaster",
                     Image = "https://images.reverb.com/image/upload/s--0sC-r5D2--/f_auto,t_supersize/v1544743060/bz3nu4jvrs16phy3oatm.jpg"
                 });
+            #endregion
 
+            #region siteUser
             context.SiteUsers.AddOrUpdate(u => u.Id,
                 new Entities.User
                 {
@@ -95,6 +101,34 @@ namespace WebSiteHome.Migrations
                     Password = "4",
                     Status = 0
                 });
+            #endregion
+
+
+            var email = "z@q.q";
+            if (!context.Users.Any(u => u.Email == email))
+            {
+
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser
+                {
+                    Email = email,
+                    UserName = email
+                };
+                var res = manager.Create(user, "Qwerty1-");
+                if (res.Succeeded)
+                {
+                    var combo = new Entities.TCombo
+                    {
+                        Id = user.Id,
+                        Name = "qwe",
+                        Image = "url"
+                    };
+                    context.Combos.Add(combo);
+                    context.SaveChanges();
+                }
+            }
+            
         }
     }
 }
