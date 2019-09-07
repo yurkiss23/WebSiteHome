@@ -18,7 +18,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44344</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -49,12 +49,21 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -167,12 +176,15 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\GuitarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Entities\TCombo.cs" />
     <Compile Include="Entities\TGuitar.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -184,6 +196,22 @@
     <Compile Include="Migrations\201908230027131_add tblGuitars.Designer.cs">
       <DependentUpon>201908230027131_add tblGuitars.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908271315499_add table siteUsers.cs" />
+    <Compile Include="Migrations\201908271315499_add table siteUsers.Designer.cs">
+      <DependentUpon>201908271315499_add table siteUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908271452136_edit table siteUsers.cs" />
+    <Compile Include="Migrations\201908271452136_edit table siteUsers.Designer.cs">
+      <DependentUpon>201908271452136_edit table siteUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908281127345_edit2 table siteUsers.cs" />
+    <Compile Include="Migrations\201908281127345_edit2 table siteUsers.Designer.cs">
+      <DependentUpon>201908281127345_edit2 table siteUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909032000047_roles table.cs" />
+    <Compile Include="Migrations\201909032000047_roles table.Designer.cs">
+      <DependentUpon>201909032000047_roles table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201909070649558_add combo.cs" />
     <Compile Include="Migrations\201909070649558_add combo.Designer.cs">
       <DependentUpon>201909070649558_add combo.cs</DependentUpon>
@@ -193,6 +221,7 @@
     <Compile Include="Models\GuitarViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\UserViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -209,6 +238,7 @@
     <Content Include="Images\200x200.svg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -272,6 +302,10 @@
     <Content Include="Views\Shared\_GuitarLayout.cshtml" />
     <Content Include="Views\Guitar\Strat.cshtml" />
     <Content Include="Views\Guitar\Add.cshtml" />
+    <Content Include="Views\Guitar\Users.cshtml" />
+    <Content Include="Views\Guitar\AddUser.cshtml" />
+    <Content Include="Views\Guitar\_AddDialog.cshtml" />
+    <Content Include="Views\Guitar\_AddForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -295,6 +329,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908230027131_add tblGuitars.resx">
       <DependentUpon>201908230027131_add tblGuitars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908271315499_add table siteUsers.resx">
+      <DependentUpon>201908271315499_add table siteUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908271452136_edit table siteUsers.resx">
+      <DependentUpon>201908271452136_edit table siteUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908281127345_edit2 table siteUsers.resx">
+      <DependentUpon>201908281127345_edit2 table siteUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909032000047_roles table.resx">
+      <DependentUpon>201909032000047_roles table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909070649558_add combo.resx">
       <DependentUpon>201909070649558_add combo.cs</DependentUpon>

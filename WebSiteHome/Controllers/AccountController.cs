@@ -17,15 +17,17 @@ namespace WebSiteHome.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationRoleManager _roleManager;
 
         public AccountController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager,ApplicationRoleManager roleManager )
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            RoleManager = roleManager;
         }
 
         public ApplicationSignInManager SignInManager
@@ -52,11 +54,47 @@ namespace WebSiteHome.Controllers
             }
         }
 
+        public ApplicationRoleManager RoleManager
+        {
+            get
+            {
+                return _roleManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationRoleManager>();
+            }
+            private set
+            {
+                _roleManager = value;
+            }
+        }
+
         //
         // GET: /Account/Login
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            string roleName = "Admin";
+            var res = RoleManager.FindByName(roleName);
+            if (res == null)
+            {
+                ApplicationRole appRole = new ApplicationRole
+                {
+                    Name = roleName
+                };
+                RoleManager.Create(appRole);
+            }
+            string email = "admin@gmail.com";
+            var user = UserManager.FindByEmail(email);
+            if (user == null)
+            {
+                ApplicationUser appUser = new ApplicationUser
+                {
+                    Email = email,
+                    UserName = email
+                };
+                UserManager.Create(appUser, "Qwerty1-");
+            }
+            user = UserManager.FindByEmail(email);
+            UserManager.AddToRole(user.Id, roleName);
+
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }

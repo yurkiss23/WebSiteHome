@@ -6,6 +6,7 @@
     <title>Класні гітари - @ViewBag.Title</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/guitar.css" rel="stylesheet" />
+    
     @RenderSection("styles", required: false)
 </head>
 <body>
@@ -25,7 +26,9 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="@Url.Action("Index", "Guitar")">Home</a></li>
-                    <li><a href="@Url.Action("Strat", "Guitar")">Страти</a></li>
+                    <li><a data-toggle="a" aria-pressed="false" href="@Url.Action("Strat", "Guitar")">Страти</a></li>
+                    <li><a href="@Url.Action("Users", "Guitar")">Користувачі</a></li>
+                    <li><a href="@Url.Action("Login", "Account")">Вхід</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>

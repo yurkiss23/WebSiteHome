@@ -20,6 +20,14 @@ namespace WebSiteHome.Models
         public virtual TCombo Combo { get; set; }
     }
 
+    public class ApplicationRole : IdentityRole
+    {
+        public ApplicationRole()
+        {
+
+        }
+    }
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -27,6 +35,7 @@ namespace WebSiteHome.Models
         {
         }
         public DbSet<TGuitar> Guitars { get; set; }
+        public DbSet<User> SiteUsers { get; set; }
         public DbSet<TCombo> Combos { get; set; }
 
         public static ApplicationDbContext Create()

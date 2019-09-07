@@ -42,6 +42,59 @@ namespace WebSiteHome.Migrations
                     Name = "Telecaster",
                     Image = "https://images.reverb.com/image/upload/s--0sC-r5D2--/f_auto,t_supersize/v1544743060/bz3nu4jvrs16phy3oatm.jpg"
                 });
+
+            context.SiteUsers.AddOrUpdate(u => u.Id,
+                new Entities.User
+                {
+                    Id = 1,
+                    FirstName = "Samppa",
+                    LastName = "Nori",
+                    DateBirth = Convert.ToDateTime("2012/01/01"),
+                    DateAdd = Convert.ToDateTime("2019/09/24"),
+                    Email = "q@q.q",
+                    Phone = "123456789",
+                    Password = "1",
+                    Status = 1
+                });
+            context.SiteUsers.AddOrUpdate(u => u.Id,
+                new Entities.User
+                {
+                    Id = 2,
+                    FirstName = "Estavan",
+                    LastName = "Lykos",
+                    DateBirth = Convert.ToDateTime("2012/02/01"),
+                    DateAdd = Convert.ToDateTime("2019/09/24"),
+                    Email = "q@q.q",
+                    Phone = "123456789",
+                    Password = "2",
+                    Status = 0
+                });
+            context.SiteUsers.AddOrUpdate(u => u.Id,
+                new Entities.User
+                {
+                    Id = 3,
+                    FirstName = "Chetan",
+                    LastName = "Mohamed",
+                    DateBirth = Convert.ToDateTime("2012/02/01"),
+                    DateAdd = Convert.ToDateTime("2019/09/24"),
+                    Email = "q@q.q",
+                    Phone = "123456789",
+                    Password = "3",
+                    Status = 1
+                });
+            context.SiteUsers.AddOrUpdate(u => u.Id,
+                new Entities.User
+                {
+                    Id = 4,
+                    FirstName = "Derick",
+                    LastName = "Maximinus",
+                    DateBirth = Convert.ToDateTime("2012/03/01"),
+                    DateAdd = Convert.ToDateTime("2019/09/24"),
+                    Email = "q@q.q",
+                    Phone = "123456789",
+                    Password = "4",
+                    Status = 0
+                });
         }
     }
 }
