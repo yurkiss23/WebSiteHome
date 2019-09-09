@@ -37,7 +37,7 @@ namespace WebSiteHome.Models
         public string Email { get; set; }
         [Display(Name = "телефон")]
         public string Phone { get; set; }
-        [Required(ErrorMessage = "пароль є обов'язковим")]
+        //[Required(ErrorMessage = "пароль є обов'язковим")]
         [Display(Name = "пароль")]
         public string Password { get; set; }
     }

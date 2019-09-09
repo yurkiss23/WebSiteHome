@@ -26,7 +26,7 @@ namespace WebSiteHome.Entities
         public string Phone { get; set; }
         [Required]
         public int Status { get; set; }
-        [Required, StringLength(255)]
+        //[Required, StringLength(255)]
         public string Password { get; set; }
     }
 }

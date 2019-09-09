@@ -18,8 +18,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>
-    </IISExpressSSLPort>
+    <IISExpressSSLPort>44344</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -218,6 +217,14 @@
     <Compile Include="Migrations\201909070705089_add combos.Designer.cs">
       <DependentUpon>201909070705089_add combos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909082232026_edit.cs" />
+    <Compile Include="Migrations\201909082232026_edit.Designer.cs">
+      <DependentUpon>201909082232026_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909090036507_edit user.cs" />
+    <Compile Include="Migrations\201909090036507_edit user.Designer.cs">
+      <DependentUpon>201909090036507_edit user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ComboViewModels.cs" />
@@ -349,6 +356,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909070705089_add combos.resx">
       <DependentUpon>201909070705089_add combos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909082232026_edit.resx">
+      <DependentUpon>201909082232026_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909090036507_edit user.resx">
+      <DependentUpon>201909090036507_edit user.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
